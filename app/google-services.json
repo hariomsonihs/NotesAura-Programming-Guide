@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "311926717488",
+    "project_id": "notesaura-programming-guide",
+    "storage_bucket": "notesaura-programming-guide.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311926717488:android:1ad0bbe8c00649a1fe41f5",
+        "android_client_info": {
+          "package_name": "com.hariomsonihs.notesaura"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZRRQ1Rd3wx3SyxKQmhnjCR0b81SAi_JA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.NotesAuraProgrammingGuide" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_start</item>
+        <item name="colorPrimaryVariant">@color/primary_end</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/secondary_start</item>
+        <item name="colorSecondaryVariant">@color/secondary_end</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/surface_light</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+</resources>

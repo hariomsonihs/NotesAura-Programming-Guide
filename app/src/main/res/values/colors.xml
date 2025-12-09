@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <!--<color name="primary_start">#4776E6</color>
+    <color name="primary_end">#8E54E9</color>
+    <color name="secondary_start">#FF512F</color>
+    <color name="secondary_end">#DD2476</color>-->
+    
+    <!-- Background Colors -->
+    <color name="background_light">#F8F9FA</color>
+    <color name="background_dark">#121212</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="surface_dark">#1E1E1E</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary_dark">#E9ECEF</color>
+    <color name="text_secondary_light">#6C757D</color>
+    <color name="text_secondary_dark">#ADB5BD</color>
+    <!-- Code Block Background -->
+    <color name="code_block_bg">#F5F5F5</color>
+    
+    <!-- Accent Colors -->
+    <!--<color name="accent_blue">#007BFF</color>
+    <color name="accent_green">#28A745</color>-->
+    <color name="accent_orange">#FD7E14</color>
+    <color name="accent_red">#DC3545</color>
+    
+    <!-- System Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- Card Colors -->
+    <color name="card_shadow">#1A000000</color>
+    <color name="ripple_light">#1F000000</color>
+    <color name="ripple_dark">#1FFFFFFF</color>
+
+        <!-- Primary Colors -->
+        <color name="primary_start">#FF6B8E</color>
+        <color name="primary_end">#FFA586</color>
+        <color name="primary_light">#FFCDD2</color>
+
+        <!-- Secondary Colors -->
+        <color name="secondary_start">#7B68EE</color>
+        <color name="secondary_end">#3498DB</color>
+
+        <!-- Accent Colors -->
+        <color name="accent_pink">#FF6B9D</color>
+        <color name="accent_blue">#4ECDC4</color>
+        <color name="accent_yellow">#FFE66D</color>
+        <color name="accent_green">#1DD1A1</color>
+
+        <!-- Neutral Colors -->
+        <color name="primary_dark">#2D3436</color>
+        <color name="light_gray">#F8F9FA</color>
+        <color name="text_primary_light">#2D3436</color>
+
+
+        <!-- Bottom Navigation Colors -->
+        <color name="bottom_nav_active">#FF6B8E</color>
+        <color name="bottom_nav_inactive">#95AFc0</color>
+        
+        <!-- Error Color -->
+        <color name="error_color">#DC3545</color>
+        <color name="error_red">#DC3545</color>
+        
+        <!-- Notification Colors -->
+        <color name="notification_highlight">#E3F2FD</color>
+</resources>

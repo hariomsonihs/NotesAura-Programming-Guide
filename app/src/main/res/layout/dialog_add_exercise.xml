@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/exercise_title_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exercise Title"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/exercise_desc_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exercise Description"
+        android:inputType="textMultiLine"
+        android:lines="2" />
+
+    <EditText
+        android:id="@+id/exercise_html_path_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="HTML File Path (e.g. courses/custom/js/basics.html)"
+        android:inputType="text" />
+
+</LinearLayout>

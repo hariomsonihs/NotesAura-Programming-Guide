@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/exercise_list_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercises"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exercise_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#FFF"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/add_exercise_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Exercise"
+        android:background="#4CAF50"
+        android:textColor="#FFF"
+        android:layout_marginBottom="8dp"/>
+
+</LinearLayout>

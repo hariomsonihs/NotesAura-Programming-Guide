@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/practice_list_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID: practice_list_id"
+        android:textSize="12sp"
+        android:textColor="#999"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/practice_list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Practice List Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#222" />
+
+    <TextView
+        android:id="@+id/practice_list_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textSize="14sp"
+        android:textColor="#666"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/practice_list_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category: Programming"
+        android:textSize="12sp"
+        android:textColor="#4CAF50"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/edit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textColor="#2196F3"
+            android:paddingEnd="16dp"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textColor="#E53935"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/manage_exercises_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Manage Exercises"
+        android:textColor="@android:color/white"
+        android:background="#4CAF50"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

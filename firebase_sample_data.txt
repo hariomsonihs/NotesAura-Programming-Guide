@@ -1,0 +1,47 @@
+// Firebase Console mein ye collections manually create kariye:
+
+1. practiceCategories collection:
+   Document ID: java_practice
+   Fields:
+   - id: "java_practice"
+   - name: "Java Practice"
+   - description: "Java programming practice"
+   - color: "#FF5722"
+   - order: 0
+
+2. interviewCategories collection:
+   Document ID: java_interview
+   Fields:
+   - id: "java_interview"
+   - name: "Java Interview"
+   - description: "Java interview questions"
+   - color: "#2196F3"
+   - order: 0
+
+3. quizCategories collection:
+   Document ID: java_quiz
+   Fields:
+   - id: "java_quiz"
+   - name: "Java Quiz"
+   - description: "Java quiz questions"
+   - color: "#4CAF50"
+   - order: 0
+
+4. categories collection:
+   Document ID: programming
+   Fields:
+   - id: "programming"
+   - name: "Programming"
+   - description: "Programming courses"
+   - color: "#9C27B0"
+   - order: 0
+
+5. courses collection:
+   Document ID: java_basics
+   Fields:
+   - id: "java_basics"
+   - title: "Java Basics"
+   - description: "Learn Java fundamentals"
+   - category: "programming"
+   - price: 0
+   - featured: true

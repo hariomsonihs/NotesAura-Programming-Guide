@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient_light">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Interview Questions"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary_light"
+        android:gravity="center"
+        android:padding="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select a category to view interview questions"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary_light"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/interview_categories_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

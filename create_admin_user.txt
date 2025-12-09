@@ -1,0 +1,18 @@
+Firebase Console mein admin user create kariye:
+
+1. Firestore Database mein jaiye
+2. "admin" collection create kariye
+3. Document ID = aapka current user UID (Firebase Auth se copy kariye)
+4. Fields add kariye:
+   - admin: "yes"
+   - role: "super_admin"
+   - createdAt: current timestamp
+
+Steps:
+1. Firebase Console → Authentication → Users
+2. Apna email wala user ka UID copy kariye
+3. Firestore → Collections → "admin" collection banayiye
+4. Document ID mein UID paste kariye
+5. Fields add kariye
+
+Ab admin panel se add/edit/delete kaam karega!

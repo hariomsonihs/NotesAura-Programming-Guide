@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@drawable/bg_rounded_white">
+
+    <ProgressBar
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:indeterminateTint="@color/primary_start" />
+
+    <TextView
+        android:id="@+id/loading_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📚 Opening PDF..."
+        android:textSize="16sp"
+        android:textColor="@color/text_primary_light"
+        android:layout_marginTop="16dp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please wait"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary_light"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>

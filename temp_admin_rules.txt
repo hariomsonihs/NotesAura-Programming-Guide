@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Temporary open rules for admin functionality
+    match /{document=**} {
+      allow read, write, create, delete: if request.auth != null;
+    }
+  }
+}
+
+// Use this temporarily to test admin functionality
+// After testing, switch back to secure rules

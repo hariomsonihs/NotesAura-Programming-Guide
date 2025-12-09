@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotesAura Admin - Send Notifications</title>
+    <style>
+        .notification-panel {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .quick-action {
+            background: #28a745;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .quick-action:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification-panel">
+        <h2>📱 Send App Notifications</h2>
+        
+        <!-- Custom Notification Form -->
+        <form id="notificationForm">
+            <div class="form-group">
+                <label for="title">Notification Title:</label>
+                <input type="text" id="title" required placeholder="e.g., New Course Added!">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" rows="3" required placeholder="e.g., Check out our latest Java programming course"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="type">Notification Type:</label>
+                <select id="type" required>
+                    <option value="custom">Custom Message</option>
+                    <option value="course">Course Related</option>
+                    <option value="ebook">Ebook Related</option>
+                    <option value="interview">Interview Related</option>
+                    <option value="practice">Practice Related</option>
+                    <option value="exercise">Exercise Related</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="targetId">Target ID (Optional):</label>
+                <input type="text" id="targetId" placeholder="e.g., course_id, ebook_id">
+            </div>
+            
+            <button type="submit">Send Notification</button>
+            <button type="button" onclick="testNotification()">Send Test</button>
+        </form>
+        
+        <div id="result"></div>
+        
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <div class="quick-action" onclick="sendQuickNotification('course')">
+                📚 New Course Added
+            </div>
+            <div class="quick-action" onclick="sendQuickNotification('ebook')">
+                📖 New Ebook Added
+            </div>
+            <div class="quick-action" onclick="sendQuickNotification('interview')">
+                🎯 Interview Questions Updated
+            </div>
+            <div class="quick-action" onclick="sendQuickNotification('practice')">
+                💻 New Practice Added
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Firebase (add your config)
+        // const firebaseConfig = { ... };
+        // firebase.initializeApp(firebaseConfig);
+        // const db = firebase.firestore();
+        
+        document.getElementById('notificationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('title').value;
+            const message = document.getElementById('message').value;
+            const type = document.getElementById('type').value;
+            const targetId = document.getElementById('targetId').value;
+            
+            await sendNotification(title, message, type, targetId);
+        });
+        
+        async function sendNotification(title, message, type, targetId) {
+            try {
+                showResult('Sending notification...', 'info');
+                
+                // Method 1: Direct API call to your server
+                const response = await fetch('/send-bulk-notifications', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        title: title,
+                        message: message,
+                        type: type,
+                        targetId: targetId
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showResult(`✅ Notification sent successfully! Reached ${result.fcmSent} users.`, 'success');
+                    document.getElementById('notificationForm').reset();
+                } else {
+                    showResult(`❌ Failed to send notification: ${result.error}`, 'error');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showResult(`❌ Error sending notification: ${error.message}`, 'error');
+            }
+        }
+        
+        function sendQuickNotification(type) {
+            const notifications = {
+                course: {
+                    title: '🚀 New Course Added!',
+                    message: 'A new programming course has been added to the app. Check it out now!',
+                    type: 'course'
+                },
+                ebook: {
+                    title: '📚 New Ebook Available!',
+                    message: 'A new programming ebook has been added to your library.',
+                    type: 'ebook'
+                },
+                interview: {
+                    title: '🎯 Interview Questions Updated!',
+                    message: 'Fresh interview questions have been added. Practice now!',
+                    type: 'interview'
+                },
+                practice: {
+                    title: '💻 New Practice Exercises!',
+                    message: 'New coding practice problems are available. Test your skills!',
+                    type: 'practice'
+                }
+            };
+            
+            const notif = notifications[type];
+            if (notif) {
+                sendNotification(notif.title, notif.message, notif.type, null);
+            }
+        }
+        
+        function testNotification() {
+            sendNotification(
+                '🧪 Test Notification',
+                'This is a test notification from admin panel',
+                'custom',
+                null
+            );
+        }
+        
+        function showResult(message, type) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<p class="${type}">${message}</p>`;
+            
+            // Clear after 5 seconds
+            setTimeout(() => {
+                resultDiv.innerHTML = '';
+            }, 5000);
+        }
+        
+        // Auto-integration functions for existing admin forms
+        window.notifyNewCourse = function(courseId, courseName) {
+            sendNotification(
+                '🚀 New Course Added!',
+                `Check out the new course: ${courseName}`,
+                'course',
+                courseId
+            );
+        };
+        
+        window.notifyCourseUpdated = function(courseId, courseName) {
+            sendNotification(
+                '📝 Course Updated!',
+                `${courseName} has been updated with new content`,
+                'course',
+                courseId
+            );
+        };
+        
+        window.notifyNewEbook = function(ebookId, ebookName) {
+            sendNotification(
+                '📚 New Ebook Added!',
+                `New ebook available: ${ebookName}`,
+                'ebook',
+                ebookId
+            );
+        };
+        
+        // Call these functions from your existing admin forms:
+        // notifyNewCourse('course123', 'Advanced Java Programming');
+        // notifyCourseUpdated('course123', 'Java Basics');
+        // notifyNewEbook('ebook456', 'Python for Beginners');
+    </script>
+</body>
+</html>

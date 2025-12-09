@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Basics</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #4776E6;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #8E54E9;
+            border-bottom: 2px solid #8E54E9;
+            padding-bottom: 10px;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .exercise {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Java Programming Basics</h1>
+        
+        <h2>Introduction to Java</h2>
+        <p>Java is a high-level, object-oriented programming language developed by Sun Microsystems (now Oracle). It's known for its "write once, run anywhere" philosophy.</p>
+        
+        <div class="highlight">
+            <strong>Key Features of Java:</strong>
+            <ul>
+                <li>Platform Independent</li>
+                <li>Object-Oriented</li>
+                <li>Secure</li>
+                <li>Robust</li>
+                <li>Multithreaded</li>
+            </ul>
+        </div>
+        
+        <h2>Your First Java Program</h2>
+        <p>Let's start with the classic "Hello World" program:</p>
+        
+        <div class="code-block">
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+        </div>
+        
+        <h2>Java Syntax Basics</h2>
+        
+        <h3>Variables and Data Types</h3>
+        <div class="code-block">
+// Primitive data types
+int age = 25;
+double salary = 50000.50;
+char grade = 'A';
+boolean isActive = true;
+String name = "John Doe";
+        </div>
+        
+        <h3>Control Structures</h3>
+        <div class="code-block">
+// If-else statement
+if (age >= 18) {
+    System.out.println("You are an adult");
+} else {
+    System.out.println("You are a minor");
+}
+
+// For loop
+for (int i = 0; i < 5; i++) {
+    System.out.println("Count: " + i);
+}
+        </div>
+        
+        <div class="exercise">
+            <h3>Practice Exercise</h3>
+            <p><strong>Task:</strong> Create a Java program that calculates the area of a rectangle.</p>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Create variables for length and width</li>
+                <li>Calculate the area (length × width)</li>
+                <li>Display the result</li>
+            </ul>
+        </div>
+        
+        <h2>Next Steps</h2>
+        <p>Now that you understand the basics, you're ready to explore:</p>
+        <ul>
+            <li>Object-Oriented Programming concepts</li>
+            <li>Classes and Objects</li>
+            <li>Methods and Constructors</li>
+            <li>Inheritance and Polymorphism</li>
+        </ul>
+    </div>
+</body>
+</html>

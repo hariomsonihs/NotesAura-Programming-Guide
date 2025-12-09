@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_light">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_gradient_primary"
+        android:elevation="4dp"
+        app:titleTextColor="@color/white"
+        app:navigationIconTint="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Course Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Details"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_light"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/course_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Course Name"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary_light"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/course_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Course Description"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary_light"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Payment Summary -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Summary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_light"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Course Fee"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary_light" />
+
+                <TextView
+                    android:id="@+id/course_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹299"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_primary_light" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Taxes &amp; Fees"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary_light" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹0"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_primary_light" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/text_secondary_light"
+                android:alpha="0.3"
+                android:layout_marginVertical="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total Amount"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary_light" />
+
+                <TextView
+                    android:id="@+id/total_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹299"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_start" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Payment Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        <Button
+            android:id="@+id/pay_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay Now with Razorpay"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_gradient_primary"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp" />
+    </LinearLayout>
+
+</LinearLayout>

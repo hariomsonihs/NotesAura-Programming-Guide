@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #FF512F 0%, #DD2476 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #FF512F;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #DD2476;
+            border-bottom: 2px solid #DD2476;
+            padding-bottom: 10px;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .exercise {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .demo {
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML Basics</h1>
+        
+        <h2>What is HTML?</h2>
+        <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page using markup tags.</p>
+        
+        <div class="highlight">
+            <strong>HTML stands for:</strong>
+            <ul>
+                <li><strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</li>
+                <li>It's not a programming language, it's a markup language</li>
+                <li>It uses tags to structure content</li>
+            </ul>
+        </div>
+        
+        <h2>Basic HTML Structure</h2>
+        <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </div>
+        
+        <h2>Common HTML Tags</h2>
+        
+        <h3>Headings</h3>
+        <div class="code-block">
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Sub Heading&lt;/h2&gt;
+&lt;h3&gt;Smaller Heading&lt;/h3&gt;
+&lt;h4&gt;Even Smaller&lt;/h4&gt;
+&lt;h5&gt;Very Small&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;
+        </div>
+        
+        <div class="demo">
+            <h1>Main Heading</h1>
+            <h2>Sub Heading</h2>
+            <h3>Smaller Heading</h3>
+        </div>
+        
+        <h3>Paragraphs and Text Formatting</h3>
+        <div class="code-block">
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is &lt;strong&gt;bold text&lt;/strong&gt; and this is &lt;em&gt;italic text&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This is &lt;u&gt;underlined&lt;/u&gt; and this is &lt;mark&gt;highlighted&lt;/mark&gt;.&lt;/p&gt;
+        </div>
+        
+        <h3>Lists</h3>
+        <div class="code-block">
+&lt;!-- Unordered List --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered List --&gt;
+&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+        </div>
+        
+        <h3>Links and Images</h3>
+        <div class="code-block">
+&lt;!-- Link --&gt;
+&lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;
+
+&lt;!-- Image --&gt;
+&lt;img src="image.jpg" alt="Description of image" width="300" height="200"&gt;
+        </div>
+        
+        <div class="exercise">
+            <h3>Practice Exercise</h3>
+            <p><strong>Task:</strong> Create a simple HTML page about yourself.</p>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Use proper HTML structure</li>
+                <li>Include a main heading with your name</li>
+                <li>Add a paragraph about yourself</li>
+                <li>Create a list of your hobbies</li>
+                <li>Add a link to your favorite website</li>
+            </ul>
+        </div>
+        
+        <h2>HTML Attributes</h2>
+        <p>HTML attributes provide additional information about elements:</p>
+        <div class="code-block">
+&lt;p id="intro" class="highlight"&gt;This paragraph has an ID and class.&lt;/p&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;Open Google in new tab&lt;/a&gt;
+&lt;img src="photo.jpg" alt="My photo" title="Hover text"&gt;
+        </div>
+        
+        <h2>Next Steps</h2>
+        <p>Now that you know HTML basics, you can learn:</p>
+        <ul>
+            <li>CSS for styling your web pages</li>
+            <li>More HTML elements (tables, forms, etc.)</li>
+            <li>HTML5 semantic elements</li>
+            <li>JavaScript for interactivity</li>
+        </ul>
+    </div>
+</body>
+</html>

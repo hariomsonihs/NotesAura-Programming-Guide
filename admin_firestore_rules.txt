@@ -1,0 +1,100 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Function to check if user is admin
+    function isAdmin() {
+      return request.auth != null && 
+             exists(/databases/$(database)/documents/admin/$(request.auth.uid)) &&
+             get(/databases/$(database)/documents/admin/$(request.auth.uid)).data.admin == "yes";
+    }
+    
+    // Users can read/write their own user document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      match /enrolledCourses/{courseId} {
+        allow read, write, create: if request.auth != null && request.auth.uid == userId;
+      }
+      
+      match /payments/{paymentId} {
+        allow read, write, create: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+    
+    // Courses - readable by all, writable by admin
+    match /courses/{courseId} {
+      allow read: if request.auth != null;
+      allow write, create, delete: if isAdmin();
+    }
+    
+    // Categories - readable by all, writable by admin
+    match /categories/{categoryId} {
+      allow read: if request.auth != null;
+      allow write, create, delete: if isAdmin();
+    }
+    
+    // Interview categories - readable by all, writable by admin
+    match /interviewCategories/{categoryId} {
+      allow read: if request.auth != null;
+      allow write, create, delete: if isAdmin();
+    }
+    
+    // Interview questions - readable by all, writable by admin
+    match /interviewQuestions/{questionId} {
+      allow read: if request.auth != null;
+      allow write, create, delete: if isAdmin();
+    }
+    
+    // Practice categories - readable by all, writable by admin
+    match /practiceCategories/{categoryId} {
+      allow read: if request.auth != null;
+      allow write, create, delete: if isAdmin();
+    }
+    
+    // Practice lists - readable by all, writable by admin
+    match /practiceLists/{listId} {
+      allow read: if request.auth != null;
+      allow write, create, delete: if isAdmin();
+    }
+    
+    // Practice exercises - readable by all, writable by admin
+    match /practiceExercises/{exerciseId} {
+      allow read: if request.auth != null;
+      allow write, create, delete: if isAdmin();
+    }
+    
+    // Quiz categories - readable by all, writable by admin
+    match /quizCategories/{categoryId} {
+      allow read: if request.auth != null;
+      allow write, create, delete: if isAdmin();
+    }
+    
+    // Quiz subcategories - readable by all, writable by admin
+    match /quizSubcategories/{subcategoryId} {
+      allow read: if request.auth != null;
+      allow write, create, delete: if isAdmin();
+    }
+    
+    // Admin collection - readable by authenticated users
+    match /admin/{adminId} {
+      allow read: if request.auth != null;
+      allow write: if false; // Only super admin can modify
+    }
+    
+    // User enrollments
+    match /enrollments/{enrollmentId} {
+      allow read, write: if request.auth != null && 
+        resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null && 
+        request.resource.data.userId == request.auth.uid;
+    }
+    
+    // User progress tracking
+    match /progress/{progressId} {
+      allow read, write: if request.auth != null && 
+        resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null && 
+        request.resource.data.userId == request.auth.uid;
+    }
+  }
+}

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_start"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true" />
+
+    <!-- Search Bar -->
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@color/background_light"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="Search in PDF..."
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/searchBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_search"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="8dp" />
+
+        <ImageButton
+            android:id="@+id/closeSearchBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_close"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Main PDF Content -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pdfRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"/>
+
+        <!-- Loading Layout -->
+        <LinearLayout
+            android:id="@+id/loadingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/background_light"
+            android:padding="32dp">
+
+            <!-- Loading Skeleton -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp"
+                android:gravity="center">
+
+                <!-- PDF Icon -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_pdf_document"
+                    android:layout_marginBottom="16dp"
+                    android:alpha="0.8" />
+
+                <!-- Document Preview Skeleton -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/skeleton_background"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_pdf_document"
+                        android:alpha="0.3" />
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PDF Document"
+                        android:textSize="12sp"
+                        android:textColor="#999999"
+                        android:layout_marginTop="8dp" />
+                        
+                </LinearLayout>
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/skeleton_background"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="4dp" />
+
+                <View
+                    android:layout_width="120dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/skeleton_background"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="8dp"
+                android:max="100"
+                android:progress="0"
+                android:progressTint="@color/primary_start"
+                android:progressBackgroundTint="@color/light_gray" />
+
+            <TextView
+                android:id="@+id/loadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📄 Loading PDF..."
+                android:textSize="18sp"
+                android:textColor="@color/text_primary_light"
+                android:layout_marginTop="24dp"
+                android:gravity="center" />
+                
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preparing your document with zoom, search and save features"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary_light"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:alpha="0.8" />
+
+        </LinearLayout>
+
+        <!-- Floating Action Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_menu"
+            app:tint="@android:color/white"
+            app:backgroundTint="@color/primary_start" />
+
+        <!-- FAB Menu Items -->
+        <LinearLayout
+            android:id="@+id/fabMenuItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fabMenu"
+            android:layout_alignEnd="@id/fabMenu"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_search"
+                app:fabSize="mini"
+                app:backgroundTint="@color/primary_start" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabJump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_jump"
+                app:fabSize="mini"
+                app:backgroundTint="@color/primary_start" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_save"
+                app:fabSize="mini"
+                app:backgroundTint="@color/primary_start" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabRotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_rotate"
+                app:fabSize="mini"
+                app:backgroundTint="@color/primary_start" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

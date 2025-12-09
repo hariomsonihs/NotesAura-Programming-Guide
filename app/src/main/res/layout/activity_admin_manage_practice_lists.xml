@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:elevation="4dp"
+        android:title="Manage Practice Lists" />
+
+    <EditText
+        android:id="@+id/search_input"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Search practice lists..."
+        android:background="@drawable/bg_search"
+        android:padding="12dp"
+        android:layout_margin="16dp"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="8dp" />
+
+    <Button
+        android:id="@+id/add_practice_list_btn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Add New Practice List"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="#2196F3"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/practice_lists_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:clipToPadding="false" />
+
+    <LinearLayout
+        android:id="@+id/exercise_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#E8F5E8"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/exercise_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exercises"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333" />
+
+        <Button
+            android:id="@+id/add_exercise_btn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Add Exercise"
+            android:textColor="@android:color/white"
+            android:background="#4CAF50"
+            android:layout_marginTop="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/exercise_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

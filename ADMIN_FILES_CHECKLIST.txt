@@ -1,0 +1,181 @@
+═══════════════════════════════════════════════════════════════
+  NOTESAURA ADMIN APP - FILES CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+📋 QUICK REFERENCE: Mark ✓ as you copy each file
+
+═══════════════════════════════════════════════════════════════
+ACTIVITIES (17 files)
+═══════════════════════════════════════════════════════════════
+[ ] AdminPanelActivity.java
+[ ] AdminCoursesActivity.java
+[ ] AdminAddCourseActivity.java
+[ ] AdminUsersActivity.java
+[ ] AdminUserDetailActivity.java
+[ ] AdminPaymentsActivity.java
+[ ] AdminAnalyticsActivity.java
+[ ] AdminManageCategoriesActivity.java
+[ ] AdminManageFeaturedCoursesActivity.java
+[ ] AdminManagePracticeCategoriesActivity.java
+[ ] AdminManagePracticeListsActivity.java
+[ ] AdminManagePracticeActivity.java
+[ ] AdminManagePracticeExercisesActivity.java
+[ ] AdminManageQuizzesActivity.java
+[ ] AdminManageInterviewActivity.java
+[ ] AuthActivity.java
+[ ] CREATE NEW: AdminAuthActivity.java (login screen)
+
+═══════════════════════════════════════════════════════════════
+ADAPTERS (6 files)
+═══════════════════════════════════════════════════════════════
+[ ] AdminCourseGridAdapter.java
+[ ] AdminUserAdapter.java
+[ ] AdminPracticeCategoryAdapter.java
+[ ] AdminPracticeListAdapter.java
+[ ] AdminPracticeExerciseAdapter.java
+[ ] AdminQuizAdapter.java
+
+═══════════════════════════════════════════════════════════════
+UTILS (10 files)
+═══════════════════════════════════════════════════════════════
+[ ] AdminHelper.java
+[ ] FirebaseDBHelper.java
+[ ] CourseDataManager.java
+[ ] PracticeDataManager.java
+[ ] QuizDataManager.java
+[ ] InterviewDataManager.java
+[ ] FirebaseAuthHelper.java
+[ ] SharedPrefManager.java
+[ ] Constants.java
+[ ] CategoryDataManager.java
+
+═══════════════════════════════════════════════════════════════
+MODELS (9 files)
+═══════════════════════════════════════════════════════════════
+[ ] Course.java
+[ ] User.java
+[ ] Exercise.java
+[ ] PracticeCategory.java
+[ ] PracticeList.java
+[ ] PracticeExercise.java
+[ ] QuizCategory.java
+[ ] Quiz.java
+[ ] InterviewCategory.java
+
+═══════════════════════════════════════════════════════════════
+LAYOUTS - ACTIVITIES (15+ files)
+═══════════════════════════════════════════════════════════════
+[ ] activity_admin_panel.xml
+[ ] activity_admin_courses.xml
+[ ] activity_admin_add_course.xml
+[ ] activity_admin_users.xml
+[ ] activity_admin_user_detail.xml
+[ ] activity_admin_payments.xml
+[ ] activity_admin_analytics.xml
+[ ] activity_admin_manage_categories.xml
+[ ] activity_admin_manage_featured_courses.xml
+[ ] activity_admin_manage_practice_categories.xml
+[ ] activity_admin_manage_practice_lists.xml
+[ ] activity_admin_manage_practice_exercises.xml
+[ ] activity_admin_manage_quizzes.xml
+[ ] activity_admin_manage_interview.xml
+[ ] activity_auth.xml
+[ ] CREATE NEW: activity_admin_auth.xml
+
+═══════════════════════════════════════════════════════════════
+LAYOUTS - ITEMS (10+ files)
+═══════════════════════════════════════════════════════════════
+[ ] item_admin_user.xml
+[ ] item_admin_course.xml
+[ ] item_admin_practice_category.xml
+[ ] item_admin_practice_list.xml
+[ ] item_admin_practice_exercise.xml
+[ ] item_admin_quiz_category.xml
+[ ] item_admin_quiz_subcategory.xml
+[ ] item_admin_interview_category.xml
+[ ] item_course_grid.xml
+[ ] (Check for any other item_admin_*.xml files)
+
+═══════════════════════════════════════════════════════════════
+RESOURCES
+═══════════════════════════════════════════════════════════════
+[ ] drawable/ (entire folder)
+[ ] values/colors.xml
+[ ] values/strings.xml
+[ ] values/styles.xml
+[ ] values/themes.xml
+
+═══════════════════════════════════════════════════════════════
+FIREBASE SETUP
+═══════════════════════════════════════════════════════════════
+[ ] Create new app in Firebase Console
+[ ] Package: codevora.notesaura.admin
+[ ] Download google-services.json
+[ ] Place in admin app/
+[ ] Update Firebase rules for admin access
+
+═══════════════════════════════════════════════════════════════
+GRADLE DEPENDENCIES
+═══════════════════════════════════════════════════════════════
+[ ] Firebase BOM
+[ ] Firebase Auth
+[ ] Firebase Firestore
+[ ] Firebase Storage
+[ ] Material Design
+[ ] CardView
+[ ] RecyclerView
+[ ] ConstraintLayout
+
+═══════════════════════════════════════════════════════════════
+PACKAGE NAME UPDATES
+═══════════════════════════════════════════════════════════════
+[ ] Change: codevora.notesaura.programming
+[ ] To: codevora.notesaura.admin
+[ ] Update in all Java files
+[ ] Update in AndroidManifest.xml
+[ ] Update in build.gradle
+
+═══════════════════════════════════════════════════════════════
+USER APP CLEANUP (After admin app is ready)
+═══════════════════════════════════════════════════════════════
+[ ] Remove all Admin*Activity.java files
+[ ] Remove AdminHelper.java
+[ ] Remove admin layouts
+[ ] Remove admin adapters
+[ ] Remove admin check from MainActivity
+[ ] Remove admin password dialog from SearchActivity
+[ ] Test user app thoroughly
+
+═══════════════════════════════════════════════════════════════
+TESTING CHECKLIST
+═══════════════════════════════════════════════════════════════
+ADMIN APP:
+[ ] Login works
+[ ] Add course works
+[ ] Edit course works
+[ ] Delete course works
+[ ] Manage users works
+[ ] Add practice works
+[ ] Add quiz works
+[ ] Analytics shows data
+
+USER APP:
+[ ] New courses appear
+[ ] Can enroll in courses
+[ ] Can take quizzes
+[ ] Can do practice
+[ ] No admin access
+[ ] App size reduced
+
+═══════════════════════════════════════════════════════════════
+ESTIMATED TIME: 2-3 hours
+═══════════════════════════════════════════════════════════════
+
+TIPS:
+1. Copy files in order listed above
+2. Update package names immediately after copying
+3. Test admin app before removing from user app
+4. Keep backup of user app before cleanup
+5. Use Firebase same project for both apps
+
+═══════════════════════════════════════════════════════════════

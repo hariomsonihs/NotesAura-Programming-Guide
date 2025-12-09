@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#4ECDC4"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <!-- Maintenance Icon -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔧"
+        android:textSize="80sp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔧 Under Maintenance"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <!-- Message -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="We're currently improving NotesAura to serve you better. The app will be back online shortly."
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:alpha="0.9"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Features Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✨ What's Coming"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary_light"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🚀"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Performance improvements"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary_light" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎨"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Enhanced user interface"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary_light" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔒"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Better security features"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary_light" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Retry Button -->
+    <Button
+        android:id="@+id/retry_button"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="🔄 Check Again"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@android:color/white"
+        android:textColor="#4ECDC4"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Exit Button -->
+    <Button
+        android:id="@+id/exit_button"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Exit App"
+        android:textSize="16sp"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Notification System</title>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getFirestore, collection, addDoc, serverTimestamp, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        
+        // Your Firebase config
+        const firebaseConfig = {
+            // Add your config here
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+        window.testNotification = async function() {
+            try {
+                // Get all users first
+                const usersSnapshot = await getDocs(collection(db, 'users'));
+                const users = [];
+                usersSnapshot.forEach(doc => {
+                    users.push({ id: doc.id, ...doc.data() });
+                });
+                
+                console.log('Found users:', users.length);
+                
+                // Send test notification to all users
+                for (const user of users) {
+                    await addDoc(collection(db, 'app_notifications'), {
+                        title: 'Test Notification',
+                        message: 'This is a test notification from admin panel',
+                        type: 'custom',
+                        userId: user.id,
+                        timestamp: serverTimestamp(),
+                        isRead: false,
+                        icon: 'https://via.placeholder.com/64x64/007bff/ffffff?text=T'
+                    });
+                }
+                
+                // Also add to old collection
+                await addDoc(collection(db, 'notifications'), {
+                    title: 'Test Notification',
+                    message: 'This is a test notification from admin panel',
+                    type: 'custom',
+                    timestamp: serverTimestamp(),
+                    isRead: false,
+                    targetId: 'all'
+                });
+                
+                alert('Test notification sent to ' + users.length + ' users!');
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error: ' + error.message);
+            }
+        };
+        
+        window.checkNotifications = async function() {
+            try {
+                const snapshot = await getDocs(collection(db, 'app_notifications'));
+                console.log('Total app_notifications:', snapshot.size);
+                
+                const oldSnapshot = await getDocs(collection(db, 'notifications'));
+                console.log('Total notifications:', oldSnapshot.size);
+                
+                alert(`Found ${snapshot.size} app notifications and ${oldSnapshot.size} old notifications`);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error: ' + error.message);
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Test Notification System</h1>
+    <button onclick="testNotification()">Send Test Notification to All Users</button>
+    <button onclick="checkNotifications()">Check Notifications Count</button>
+    
+    <h2>Instructions:</h2>
+    <ol>
+        <li>Add your Firebase config above</li>
+        <li>Open this file in browser</li>
+        <li>Click "Send Test Notification"</li>
+        <li>Check mobile app for notifications</li>
+        <li>Check Firebase Console → Firestore for data</li>
+    </ol>
+</body>
+</html>

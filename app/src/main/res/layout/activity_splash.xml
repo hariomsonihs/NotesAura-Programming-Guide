@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash_gradient">
+
+    <!-- Animated Background Circles -->
+    <View
+        android:id="@+id/circle1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="-100dp"
+        android:background="@drawable/bg_circle_accent"
+        android:alpha="0.3" />
+
+    <View
+        android:id="@+id/circle2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-75dp"
+        android:layout_marginStart="-75dp"
+        android:background="@drawable/bg_circle_secondary"
+        android:alpha="0.2" />
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="40dp">
+
+        <!-- Logo Container -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logo_container"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            app:cardCornerRadius="80dp"
+            app:cardElevation="20dp"
+            android:layout_marginBottom="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_gradient_logo"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/app_logo"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:src="@drawable/logo"
+                    android:scaleType="centerInside" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- App Name -->
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NotesAura"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="8dp"
+            android:alpha="0" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/app_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Programming Guide"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginBottom="50dp"
+            android:alpha="0" />
+
+        <!-- Progress Section -->
+        <LinearLayout
+            android:id="@+id/progress_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:alpha="0">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:indeterminateTint="@color/white"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/loading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:alpha="0.8" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Bottom Branding -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Learn • Practice • Excel"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:alpha="0.7"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/version_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version 1.0"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:alpha="0.5" />
+
+    </LinearLayout>
+
+</RelativeLayout>

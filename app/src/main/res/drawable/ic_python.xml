@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Top snake (blue) -->
+    <path
+        android:fillColor="#3776AB"
+        android:pathData="M24,4c-6,0 -10,4 -10,10v4h12v4H10c-4,0 -6,2 -6,6v6c0,6 4,10 10,10h4v-8h-6v-4c0,-2 2,-4 4,-4h12c6,0 10,-4 10,-10V14c0,-6 -4,-10 -10,-10H24z" />
+
+    <!-- Bottom snake (yellow) -->
+    <path
+        android:fillColor="#FFD43B"
+        android:pathData="M24,44c6,0 10,-4 10,-10v-4H22v-4h16c4,0 6,-2 6,-6v-6c0,-6 -4,-10 -10,-10h-4v8h6v4c0,2 -2,4 -4,4H20c-6,0 -10,4 -10,10v6c0,6 4,10 10,10h4z" />
+
+    <!-- Eye (top snake, white circle) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,12a2,2 0 1,0 0.001,0z" />
+
+    <!-- Eye (bottom snake, white circle) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M20,36a2,2 0 1,0 0.001,0z" />
+
+</vector>

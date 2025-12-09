@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_cartoon"
+            android:title="Home" />
+        
+        <item
+            android:id="@+id/nav_categories"
+            android:icon="@drawable/ic_categories_cartoon"
+            android:title="Categories" />
+        
+        <item
+            android:id="@+id/nav_quizzes"
+            android:icon="@drawable/ic_quiz_cartoon"
+            android:title="Quizzes" />
+        
+
+        
+
+        
+        <item
+            android:id="@+id/nav_ebooks"
+            android:icon="@drawable/ic_settings"
+            android:title="📚 E-books" />
+    </group>
+    
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_info_cartoon"
+                android:title="About" />
+            
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="Share App" />
+            
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_contact_cartoon"
+                android:title="Contact" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,21 @@
+// Add these rules to your Firestore Security Rules in Firebase Console
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Existing rules...
+    
+    // E-book collections - allow read/write for authenticated users
+    match /ebook_categories/{document} {
+      allow read, write: if request.auth != null;
+    }
+    
+    match /ebook_subcategories/{document} {
+      allow read, write: if request.auth != null;
+    }
+    
+    match /ebooks/{document} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
